@@ -1,10 +1,9 @@
 
 const Footer = () => {
   return (
-    <div>
-        <hr/>
+    <footer>
         <p>Copyright Mexican Food 2024</p>
-    </div>
+    </footer>
   )
 }
 
