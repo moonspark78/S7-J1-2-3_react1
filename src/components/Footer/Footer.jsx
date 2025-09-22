@@ -1,10 +1,11 @@
+import "./footer.scss";
 
 const Footer = () => {
   return (
-    <footer>
-        <p>Copyright Mexican Food 2024</p>
+    <footer className="site-footer">
+      <p>© Copyright Mexican Food 2024</p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
