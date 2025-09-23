@@ -18,7 +18,7 @@ function App() {
     price: 12,
     image: "https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg",
     isNew: false,
-    stock:0
+    stock:10
   },
   {
     name: "Mole poblano",
@@ -30,6 +30,7 @@ function App() {
   ];
     
     const filteredDishes = dishes.filter(dish => dish.stock > 0);
+
 
   return (
     <>
