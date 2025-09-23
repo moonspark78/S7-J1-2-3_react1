@@ -5,14 +5,12 @@ import "./dish.scss";
 const Dish = ({ name, price, image, isNew }) => {
   return (
     <Card>
-      <div className="image-container">
       <Card.Img variant="top" src={image} alt={name} />
           {isNew && (
             <Badge bg="primary" className="badge">
               Nouveau
             </Badge>
           )}
-      </div>
       <Card.Body>
         <Card.Title>{name}
         </Card.Title>
