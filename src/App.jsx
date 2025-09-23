@@ -8,9 +8,15 @@ import "./App.scss";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const handleShowNewOnly = () => {
     setShowNewOnly(prevShowNewOnly => !prevShowNewOnly);
   };
+
+  const addToCart = () => {
+    setCartCount(prev => prev + 1);
+  };
+
   const dishes = [
     {
       name: "Tacos à l’unité",
@@ -44,7 +50,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cartCount={cartCount}/>
       <main>
         <Container>
           <Button variant="secondary" onClick={handleShowNewOnly}>
@@ -58,6 +64,7 @@ function App() {
                   price={dish.price}
                   image={dish.image}
                   isNew={dish.isNew}
+                  addToCart={addToCart}
                 />
               </Col>
             ))}

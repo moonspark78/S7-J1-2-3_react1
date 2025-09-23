@@ -4,7 +4,7 @@ import Badge from "react-bootstrap/Badge";
 
 import "./dish.scss";
 
-const Dish = ({ name, price, image, isNew }) => {
+const Dish = ({ name, price, image, isNew, addToCart}) => {
   const handleClick = (dishNanme) => {
     alert(`Le plat ${dishNanme} est maintenant dans votre panier`);
   };
@@ -19,7 +19,7 @@ const Dish = ({ name, price, image, isNew }) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{price}€</Card.Text>
-        <Button variant="primary" onClick={() => handleClick(name)}>
+        <Button variant="primary" onClick={addToCart}>
           Ajouter au panier
         </Button>
       </Card.Body>

@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import "./Header.scss";
 import logo from "../../assets/logo.webp";
 
-const Header = () => {
+const Header = ({cartCount}) => {
   return (
     <header>
       <Navbar expand="lg" bg="light">
@@ -19,6 +19,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/">Accueil</Nav.Link>
+              <Nav.Link>Panier : ({cartCount})</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
