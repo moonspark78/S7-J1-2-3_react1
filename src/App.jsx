@@ -38,7 +38,7 @@ function App() {
       <main>
         <Container>
           <Row>
-              {filteredDishes.map((dish, index) => (
+              {dishes.map((dish, index) => (
                 <Col md={4} key={index} >
                 <Dish 
                 name={dish.name}

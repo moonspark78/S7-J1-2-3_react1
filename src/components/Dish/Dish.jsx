@@ -5,8 +5,8 @@ import "./dish.scss";
 
 const Dish = ({ name, price, image, isNew }) => {
 
-  const handleClick = () => {
-      alert(`Le plat ${name} est maintenant dans votre panier`)
+  const handleClick = (dishNanme) => {
+      alert(`Le plat ${dishNanme} est maintenant dans votre panier`)
     }
   return (
     <Card>
@@ -22,7 +22,7 @@ const Dish = ({ name, price, image, isNew }) => {
         <Card.Text>
           {price}€
         </Card.Text>
-        <Button variant="primary" onClick={handleClick}>Ajouter au panier</Button>
+        <Button variant="primary" onClick={() =>handleClick(name)}>Ajouter au panier</Button>
       </Card.Body>
     </Card>
   );
