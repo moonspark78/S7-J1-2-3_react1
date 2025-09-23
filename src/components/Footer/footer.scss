@@ -1,6 +1,8 @@
-.site-footer {
-  background-color: #555; // gris
+footer {
+  background-color: #555;
   color: white;
-  text-align: center;
+  display: flex;             
+  align-items: center;        
+  justify-content: center;    
   padding: 20px 0;
 }

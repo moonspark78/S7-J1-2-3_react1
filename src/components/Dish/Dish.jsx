@@ -3,12 +3,12 @@ import "./dish.scss";
 
 const Dish = ({ name, price, image }) => {
   return (
-    <Card className="dish-card">
+    <Card>
       <Card.Img variant="top" src={image} alt={name} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
-          <strong>Prix :</strong> {price}€
+          Prix : {price}€
         </Card.Text>
       </Card.Body>
     </Card>
