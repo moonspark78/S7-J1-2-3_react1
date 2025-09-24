@@ -1,11 +1,10 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
 import "./Header.scss";
 import logo from "../../assets/logo.webp";
+import useCart from "../../hooks/useCart";
 
 const Header = () => {
-  const { cartCount } = useContext(CartContext);
+  const { cartCount } = useCart();
   return (
     <header>
       <Navbar expand="lg" bg="light">

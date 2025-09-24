@@ -1,14 +1,12 @@
-import { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-import { CartContext } from "../../context/CartContext.jsx";
-
-
+import useCart  from "../../hooks/useCart";
 import "./dish.scss";
 
 const Dish = ({ name, price, image, isNew}) => {
-  const {dispatch} = useContext(CartContext);
+  const { addToCart, removeFromCart } = useCart();
+
   return (
     <Card>
       <Card.Img variant="top" src={image} alt={name} />
@@ -20,10 +18,10 @@ const Dish = ({ name, price, image, isNew}) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{price}€</Card.Text>
-        <Button variant="primary" onClick={() => dispatch({type: "increment"})}>
+        <Button variant="primary" onClick={addToCart}>
           Ajouter au panier
         </Button>
-        <Button variant="danger" onClick={() => dispatch({type: "decrement"})} className="ms-2">
+        <Button variant="danger" onClick={removeFromCart} className="ms-2">
           Retirer du panier
         </Button>
       </Card.Body>

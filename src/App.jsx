@@ -3,14 +3,14 @@ import Footer from "./components/Footer/Footer";
 import Button from "react-bootstrap/Button";
 import Header from "./components/Header/Header";
 import { Container, Row, Col } from "react-bootstrap";
-import { useState, useContext, useEffect, useRef } from "react";
-import { CartContext } from "./context/CartContext";
+import { useState, useEffect, useRef } from "react";
+import useCart from "./hooks/useCart";
 import "./App.scss";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false);
 
-  const { cartCount } = useContext(CartContext);
+  const { cartCount } = useCart();
 
   const prevCartCountRef = useRef(cartCount);
   
