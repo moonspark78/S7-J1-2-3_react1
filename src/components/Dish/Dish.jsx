@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import { CartContext } from "../../context/CartContext.jsx";
+
 
 import "./dish.scss";
 
-const Dish = ({ name, price, image, isNew, addToCart}) => {
-  
+const Dish = ({ name, price, image, isNew}) => {
+  const { addToCart } = useContext(CartContext);
   return (
     <Card>
       <Card.Img variant="top" src={image} alt={name} />
