@@ -1,9 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import "./Header.scss";
 import logo from "../../assets/logo.webp";
-import { CartContext } from "../../context/CartContext.jsx";
-
 
 const Header = () => {
   const { cartCount } = useContext(CartContext);
@@ -23,7 +22,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/">Accueil</Nav.Link>
-              <Nav.Link>Panier : ({cartCount})</Nav.Link>
+              <Nav.Link href="/panier">Panier ({cartCount})</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
