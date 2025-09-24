@@ -3,11 +3,20 @@ import Footer from "./components/Footer/Footer";
 import Button from "react-bootstrap/Button";
 import Header from "./components/Header/Header";
 import { Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
+import { CartContext } from "./context/CartContext";
 import "./App.scss";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false);
+
+  const { cartCount } = useContext(CartContext);
+
+  const prevCartCountRef = useRef(cartCount);
+  
+  useEffect(() => {
+    prevCartCountRef.current = cartCount;
+  }, [cartCount]);
 
   const handleShowNewOnly = () => {
     setShowNewOnly(prevShowNewOnly => !prevShowNewOnly);
@@ -52,6 +61,9 @@ function App() {
           <Button variant="secondary" onClick={handleShowNewOnly}>
             {showNewOnly ? "Voir tous les plats" : "Nouveautés uniquement"}
           </Button>
+             <p className="mt-3">
+            Le panier est passé de {prevCartCountRef.current} à {cartCount} articles
+          </p>
           <Row>
             {filteredDishes.map((dish, index) => (
               <Col md={4} key={index}>
