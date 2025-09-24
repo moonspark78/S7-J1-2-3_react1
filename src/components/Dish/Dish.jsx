@@ -5,9 +5,7 @@ import Badge from "react-bootstrap/Badge";
 import "./dish.scss";
 
 const Dish = ({ name, price, image, isNew, addToCart}) => {
-  const handleClick = (dishNanme) => {
-    alert(`Le plat ${dishNanme} est maintenant dans votre panier`);
-  };
+  
   return (
     <Card>
       <Card.Img variant="top" src={image} alt={name} />
